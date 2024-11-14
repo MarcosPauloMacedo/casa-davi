@@ -25,7 +25,7 @@ const createUserForm = (users: IUser): IUserForm => {
     }
 }
 
-const createUserToSave = (user: any): IUserCreate => {    
+const createUserToSave = (user: z.infer<typeof formSchema>): IUserCreate => {    
     return {
         ...user,
         status: user.status ? 'ACTIVE' : 'INACTIVE',

@@ -1,4 +1,4 @@
-import { IEndereco } from "@/interfaces/IEndereco";
+import { IEnderecoCreate } from "@/interfaces/IEndereco";
 
 const API_URL = `${process.env.NEXT_PUBLIC_API_URL}/enderecos`;
 
@@ -6,7 +6,7 @@ export const getByPacientId = async (pacienteId: string) => {
     return await fetch(`${API_URL}?pacienteId=${pacienteId}`);
 }
 
-export const createEndereco = async ( enderecoToSave: IEndereco) => {
+export const createEndereco = async ( enderecoToSave: IEnderecoCreate) => {
     return await fetch(`${API_URL}`, {
         method: 'POST',
         headers: {
@@ -17,7 +17,7 @@ export const createEndereco = async ( enderecoToSave: IEndereco) => {
 }
 
 export const updateByPacienteId = async (pacienteId: string, 
-    enderecoToSave: IEndereco) => {
+    enderecoToSave: IEnderecoCreate) => {
 
     return await fetch(`${API_URL}/paciente/${pacienteId}`, {
         method: 'PUT',

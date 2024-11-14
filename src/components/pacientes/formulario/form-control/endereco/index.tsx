@@ -6,7 +6,7 @@ import { FormControlBox } from '@/components/form/form-control-box'
 import { LoadingCard } from '@/components/loading/card'
 import { Button } from '@/components/ui/button'
 import { Form } from '@/components/ui/form'
-import { IEndereco } from '@/interfaces/IEndereco'
+import { IEndereco, IEnderecoCreate } from '@/interfaces/IEndereco'
 import { IPaciente } from '@/interfaces/IPaciente'
 import { createEndereco, getByPacientId, updateByPacienteId } from '@/services/enderecos'
 import { StatusComponent } from '@/utils/status-component-enum'
@@ -26,7 +26,7 @@ interface formEnderecoProps {
     nextStep: () => void;
 }
 
-const createEnderecoToSave = (enderecoToSave: any, pacienteId: string): IEndereco => {
+const createEnderecoToSave = (enderecoToSave: z.infer<typeof formSchema>, pacienteId: string): IEnderecoCreate => {
     return {
         ...enderecoToSave,
         pacienteId: pacienteId
@@ -75,7 +75,7 @@ export function FormEndereco({ paciente, previusStep, nextStep, endereco, setEnd
         }
     }
 
-    const updateEnderecoByPacienteId = async (pacienteId: string, enderecoToSave: IEndereco) => {
+    const updateEnderecoByPacienteId = async (pacienteId: string, enderecoToSave: IEnderecoCreate) => {
         setStatusComponent(StatusComponent.LOADING);
 
         const response = await updateByPacienteId(pacienteId, enderecoToSave);
@@ -89,7 +89,7 @@ export function FormEndereco({ paciente, previusStep, nextStep, endereco, setEnd
         }
     }
     
-    const createNewEndereco = async (enderecoToSave: IEndereco) => {
+    const createNewEndereco = async (enderecoToSave: IEnderecoCreate) => {
         setStatusComponent(StatusComponent.LOADING);
 
         const response = await createEndereco(enderecoToSave);

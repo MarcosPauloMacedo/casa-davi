@@ -24,7 +24,7 @@ const createPacienteForm = (pacientes: IPaciente): IPacienteForm => {
     }
 }
 
-const createPacienteToSave = (pacientes: any): IPacienteCreate => {
+const createPacienteToSave = (pacientes: z.infer<typeof formSchema>): IPacienteCreate => {
     return {
         ...pacientes,
         status: pacientes.status ? 'ACTIVE' : 'INACTIVE'

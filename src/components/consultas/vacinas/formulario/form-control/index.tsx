@@ -22,7 +22,7 @@ import { Subtitle } from "@/components/subtitle";
 
 import styles from '../../../../form/form.module.css';
 
-const createVacinaToSave = (values: any, pacienteId: string): IVacinaCreate => {
+const createVacinaToSave = (values: z.infer<typeof formSchema>, pacienteId: string): IVacinaCreate => {
     return {
         ...values,
         pacienteId: pacienteId

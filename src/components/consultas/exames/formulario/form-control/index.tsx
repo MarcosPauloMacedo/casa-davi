@@ -22,7 +22,7 @@ import { SuccessDialog } from "@/components/all-dialogs/success-dialog";
 
 import styles from '../../../../form/form.module.css';
 
-const createExameToSave = (values: any, pacienteId: string): IExameCreate => {
+const createExameToSave = (values: z.infer<typeof formSchema>, pacienteId: string): IExameCreate => {
     return {
         ...values,
         pacienteId: pacienteId

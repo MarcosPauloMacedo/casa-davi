@@ -26,7 +26,7 @@ interface formEnderecoProps {
     previusStep: () => void;
 }
 
-const createParentescoToSave = (parentescoToSave: any, pacienteId: string): 
+const createParentescoToSave = (parentescoToSave: z.infer<typeof formSchema>, pacienteId: string): 
     IParentesco => {
 
     return {
