@@ -1,6 +1,5 @@
 import { ButtonBack } from "../buttons/back";
 import { ButtonRouter } from "../buttons/router";
-import { ThemeIcon } from "../theme-icon";
 import { TitleDescription } from "../title/title-description";
 
 import styles from './header-page.module.css'
