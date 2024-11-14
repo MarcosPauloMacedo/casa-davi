@@ -1,0 +1,44 @@
+
+.fieldFormItem {
+    @apply flex gap-3 items-center;
+}
+
+.fieldCheckboxInfo {
+    @apply space-y-1 leading-none;
+}
+
+.input {
+    @apply flex justify-around;
+}
+
+.inputOTPSlot {
+    @apply h-6 w-6 md:h-10 md:w-10 sm:h-8 sm:w-8;
+}
+
+.separator {
+    @apply hidden sm:block;
+}
+
+/* form-control */
+.formControlBox {
+    @apply p-4 rounded mt-5 mb-10;
+}
+
+.form {
+    @apply space-y-8;
+}
+
+.formContent {
+    @apply grid grid-cols-12 gap-3;
+}
+
+.button {
+    @apply text-start
+}
+
+
+
+
+
+
+

@@ -1,0 +1,31 @@
+.header {
+    @apply flex justify-center;
+}
+
+.title {
+    @apply text-primary-foreground font-semibold text-xl mb-4 self-center;
+}
+
+.spanTitle {
+    @apply hidden md:inline;
+}
+
+.headerForm {
+    @apply relative flex items-center mb-4;
+}
+
+.hr {
+    @apply flex-grow border-t border-foreground;
+}
+
+.spanHeaderForm {
+    @apply flex-shrink mx-4 text-foreground;
+} 
+
+.form {
+    @apply flex flex-col;
+}
+
+.buttonForm {
+    @apply mt-3 text-primary font-semibold;
+}

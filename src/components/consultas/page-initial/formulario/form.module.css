@@ -1,0 +1,8 @@
+.fieldSelect {
+    @apply col-span-12 sm:col-span-10;
+}
+
+.button {
+    @apply col-span-4 sm:col-span-2;
+}
+

@@ -1,0 +1,23 @@
+.swipeSimple {
+    @apply flex gap-2 rounded w-full md:w-2/3 xl:w-1/2 h-48 mt-8;
+}
+
+.arrowLeft{
+    @apply flex items-center justify-center w-1/4 bg-card h-full rounded-s-xl cursor-pointer;
+}
+
+.arrowRight {
+    @apply flex items-center justify-center w-1/4 bg-card h-full rounded-e-xl cursor-pointer;
+}
+
+.icon {
+    @apply h-8 w-8 dark:text-primary text-primary-foreground;
+}
+
+.link {
+    @apply flex items-center overflow-y-auto justify-center h-full w-1/2 bg-card rounded;
+}
+
+.subtitle {
+    @apply mb-2;
+}

@@ -1,0 +1,19 @@
+.header {
+    @apply flex justify-end items-center gap-6 pt-6 px-8 mr-14;
+}
+
+.icon {
+    @apply w-6 h-6 mr-2;
+}
+
+.inicioContainer {
+    @apply container flex flex-col justify-center min-h-[90vh];
+}
+
+.description {
+    @apply text-center;
+}
+
+.sectionButton{
+    @apply flex justify-center gap-5 p-4 mt-10 flex-wrap;
+}

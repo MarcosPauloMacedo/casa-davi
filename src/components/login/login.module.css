@@ -1,0 +1,16 @@
+.login {
+    @apply flex justify-center items-center min-h-screen;
+}
+
+.boxCenter {
+    @apply bg-card flex w-auto rounded-xl p-3 m-10;
+}
+
+.sectionForm {
+    @apply lg:w-96 md:w-[350px] p-6 flex flex-col justify-center;
+}
+
+
+
+
+

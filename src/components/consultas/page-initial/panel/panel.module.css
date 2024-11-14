@@ -1,0 +1,8 @@
+.containerSwipeButton {
+    @apply flex flex-col items-center;
+}
+
+.button {
+    @apply mt-14;
+}
+

@@ -1,0 +1,41 @@
+/* confirm-delete */
+
+.contentDel { 
+    @apply sm:max-w-md dark:text-primary text-red-500;
+}
+
+.descriptionDel {
+    @apply text-primary text-base flex items-center justify-around;
+}
+
+.buttonDel {
+    @apply ml-4;
+}
+
+/* success */
+
+.contentSuccess {
+    @apply sm:max-w-sm border border-secondary rounded dark:text-primary text-secondary;
+}
+
+.descriptionSuccess {
+    @apply text-secondary text-base flex items-center justify-center;
+}
+
+/* Error */
+
+.contentError {
+    @apply sm:max-w-sm border border-red-500 rounded flex flex-col items-center dark:text-primary-dark text-primary;
+}
+
+.descriptionError {
+    @apply dark:text-primary-dark text-red-500 text-xl flex items-center justify-center gap-3;
+}
+
+.iconError {
+    @apply text-red-500 w-6 h-6;
+}
+
+.buttonError {
+    @apply bg-red-500 w-1/2;
+}

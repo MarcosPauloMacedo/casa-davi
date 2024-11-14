@@ -1,0 +1,14 @@
+/* title-description */
+
+.titleDescription {
+    @apply text-3xl py-4 text-center sm:text-left w-full sm:w-auto;
+}
+
+.spanDescription {
+    @apply text-base hidden md:inline;
+}
+
+/* title */
+.title {
+    @apply text-center mb-8 text-4xl font-bold;
+}

@@ -1,0 +1,29 @@
+.pageLoading {
+    @apply w-1/2 max-w-md relative top-12;
+}
+
+.pageView {
+    @apply p-8;
+}
+
+.content {
+    @apply flex justify-center items-center sm:flex-row flex-col;
+}
+
+.sectionImg {
+    @apply flex flex-col items-center;
+}
+
+.img {
+    @apply relative md:w-[300px] md:h-[300px] md:right-[-50px] 
+    sm:w-[200px] sm:h-[200px] sm:right-[-30px];
+}
+
+.buttonBack {
+    @apply w-24 mt-14 mb-14 sm:mb-0;
+}
+
+.pageViewData {
+    @apply md:pt-10 md:pb-20 md:px-20 sm:w-1/2 w-auto rounded-2xl 
+    sm:relative sm:top-28 max-w-md pb-10 pt-10 px-10 border-background mb-10;
+}

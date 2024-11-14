@@ -1,0 +1,18 @@
+/* textDisplay */
+.textDisplay {
+    @apply text-secondary p-1 text-sm;
+}
+
+.span {
+    @apply font-semibold mx-1 text-primary-foreground;
+}
+
+/* textAreaDisplay */
+.textAreaDisplay {
+    @apply p-1 text-secondary;
+}
+
+.textArea {
+    @apply bg-card-foreground text-primary-foreground font-semibold mt-1;
+}
+
