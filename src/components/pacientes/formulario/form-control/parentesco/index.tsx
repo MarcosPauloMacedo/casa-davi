@@ -1,7 +1,7 @@
 'use client'
 
 import { IParentesco } from "@/interfaces/IParentesco";
-import { formSchema, formValues } from "./form-control-data";
+import { formSchema, useFormValues } from "./form-control-data";
 import { IPaciente } from "@/interfaces/IPaciente";
 import { useRouter } from "next/navigation";
 import { Fragment, useEffect, useState } from "react";
@@ -49,7 +49,7 @@ export function FormParentesco({ paciente, previusStep, parentesco, setParentesc
     const [descriptionSuccessDialog, setDescriptionSuccessDialog] = useState<string>('');
     const [descriptionErrorDialog, setDescriptionErrorDialog] = useState<string>('');
 
-    const form = formValues();
+    const form = useFormValues();
 
     const previus = () => {
         const parentesco = form.getValues() as IParentesco;

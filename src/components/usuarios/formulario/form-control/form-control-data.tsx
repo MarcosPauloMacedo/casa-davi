@@ -12,7 +12,7 @@ const formSchema = z.object({
     status: z.boolean().default(false).optional()
 })
 
-function formValues() {
+function useFormValues() {
     return (
         useForm<z.infer<typeof formSchema>>({
             resolver: zodResolver(formSchema),
@@ -27,4 +27,4 @@ function formValues() {
     )
 }
 
-export { formSchema, formValues }
+export { formSchema, useFormValues }

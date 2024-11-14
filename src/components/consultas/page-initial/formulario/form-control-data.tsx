@@ -8,7 +8,7 @@ const formSchema = z.object({
     pacientId: z.string().min(1)
 })
 
-function formValues() {
+function useFormValues() {
     return (
         useForm<z.infer<typeof formSchema>>({
             resolver: zodResolver(formSchema),
@@ -19,4 +19,4 @@ function formValues() {
     )
 }
 
-export { formSchema, formValues }
+export { formSchema, useFormValues }

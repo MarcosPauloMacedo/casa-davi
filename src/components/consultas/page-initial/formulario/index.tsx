@@ -2,7 +2,7 @@
 
 import { FieldSelect } from "@/components/form/fields";
 import { Form } from "@/components/ui/form";
-import { formSchema, formValues } from "./form-control-data";
+import { formSchema, useFormValues } from "./form-control-data";
 import { formControlText as text } from "./form-control-text";
 import { IPaciente } from "@/interfaces/IPaciente";
 import { useEffect, useState } from "react";
@@ -27,7 +27,7 @@ interface IPageInitialFormProps {
 }
 
 export function PageInitialForm({ setPacienteId, nextStep }: IPageInitialFormProps) {
-    const form = formValues();
+    const form = useFormValues();
 
     const [selectItems, setSelectItems] = useState<ISelectItem[]>([]);
 

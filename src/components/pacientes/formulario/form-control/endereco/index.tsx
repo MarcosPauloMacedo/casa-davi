@@ -13,7 +13,7 @@ import { StatusComponent } from '@/utils/status-component-enum'
 import { useRouter } from 'next/navigation'
 import { Fragment, useEffect, useState } from 'react'
 import { z } from 'zod'
-import { formSchema, formValues } from './form-control-data'
+import { formSchema, useFormValues } from './form-control-data'
 import { formControlText as text } from './form-control-text'
 
 import styles from '../../../../form/form.module.css'
@@ -45,7 +45,7 @@ export function FormEndereco({ paciente, previusStep, nextStep, endereco, setEnd
     const [dialogErrorForm, setDialogErrorForm] = useState<boolean>(false);
     const [descriptionErrorDialog, setDescriptionErrorDialog] = useState<string>('');
 
-    const form = formValues();
+    const form = useFormValues();
 
     const previus = () => {
         const endereco = form.getValues() as IEndereco;

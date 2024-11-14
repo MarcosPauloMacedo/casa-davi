@@ -9,7 +9,7 @@ import { logIn } from "@/services/login"
 import { useRouter } from "next/navigation"
 import { Fragment } from "react"
 import { z } from "zod"
-import { formSchema, formValues } from "./form-control-data"
+import { formSchema, useFormValues } from "./form-control-data"
 
 import styles from './form.module.css'
 
@@ -44,7 +44,7 @@ const createLogin = (values: z.infer<typeof formSchema>) => {
 
 export function LoginForm() {
     const router = useRouter()
-    const form = formValues()
+    const form = useFormValues()
 
     const isSubmitSuccess = async (values: z.infer<typeof formSchema>) => {
         const login: ILogin = createLogin(values)

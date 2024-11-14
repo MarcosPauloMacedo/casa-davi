@@ -4,7 +4,7 @@ import { IPaciente } from "@/interfaces/IPaciente";
 import { StatusComponent } from "@/utils/status-component-enum";
 import { useRouter, useSearchParams } from "next/navigation";
 import { Fragment, useEffect, useState } from "react";
-import { formSchema, formValues } from "./form-control-data";
+import { formSchema, useFormValues } from "./form-control-data";
 import { formControlText as text } from "./form-control-text";
 import { getCookies } from "@/services/cookies";
 import { getPacienteById } from "@/services/pacientes";
@@ -44,7 +44,7 @@ export function ExameFormControl() {
     const [statusComponent, setStatusComponent] = useState<StatusComponent>
     (StatusComponent.LOADING);
 
-    const form = formValues();
+    const form = useFormValues();
 
     const handleError = () => {
         setStatusComponent(StatusComponent.ERROR);

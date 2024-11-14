@@ -9,7 +9,7 @@ const formSchema = z.object({
     grauParentesco: z.string().min(2).max(50)
 })
 
-function formValues() {
+function useFormValues() {
     return (
         useForm<z.infer<typeof formSchema>>({
             resolver: zodResolver(formSchema),
@@ -21,4 +21,4 @@ function formValues() {
     )
 }
 
-export { formSchema, formValues }
+export { formSchema, useFormValues }

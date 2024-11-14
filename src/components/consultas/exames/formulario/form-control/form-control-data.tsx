@@ -12,7 +12,7 @@ const formSchema = z.object({
     relatorio: z.string().min(6).max(300),
 })
 
-function formValues() {
+function useFormValues() {
     return (
         useForm<z.infer<typeof formSchema>>({
             resolver: zodResolver(formSchema),
@@ -27,4 +27,4 @@ function formValues() {
     )
 }
 
-export { formSchema, formValues }
+export { formSchema, useFormValues }

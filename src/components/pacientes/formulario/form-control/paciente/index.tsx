@@ -2,7 +2,7 @@
 
 import { Field, FieldCheckbox, FieldCPF } from '@/components/form/fields'
 import { Button } from '@/components/ui/button'
-import { formSchema, formValues } from './form-control-data'
+import { formSchema, useFormValues } from './form-control-data'
 import { formControlText as text } from './form-control-text'
 import { IPaciente, IPacienteCreate, IPacienteForm } from '@/interfaces/IPaciente'
 import { useRouter, useSearchParams } from 'next/navigation'
@@ -51,7 +51,7 @@ export function FormPaciente( { paciente, setPaciente, nextStep }:
     const [dialogErrorForm, setDialogErrorForm] = useState<boolean>(false);
     const [descriptionErrorDialog, setDescriptionErrorDialog] = useState<string>('');
 
-    const form = formValues();
+    const form = useFormValues();
 
     const handleError = () => {
         setStatusComponent(StatusComponent.ERROR);
