@@ -23,17 +23,19 @@ import {
     SelectValue 
 } from "../ui/select";
 
-import { UseFormReturn } from "react-hook-form";
+import { Path, UseFormReturn } from "react-hook-form";
 import { Checkbox } from "../ui/checkbox";
 import { Input } from "../ui/input";
-
-import styles from './form.module.css';
 import { ISelectItem } from "@/interfaces/ISelectItem";
 import { Textarea } from "../ui/textarea";
 
-interface IFieldProps {
-    form: UseFormReturn<any>;
-    name: string;
+import styles from './form.module.css';
+
+import { FieldValues } from "react-hook-form";
+
+interface IFieldProps<T extends FieldValues> {
+    form: UseFormReturn<T>;
+    name: Path<T>;
     label: string;
     className?: string;
     typeInput?: React.HTMLInputTypeAttribute
@@ -43,8 +45,8 @@ interface IFieldProps {
 }
 
 
-function Field({ form, name, label, className, typeInput, placeholder,
-    description }: IFieldProps) {
+function Field<T extends FieldValues>({ form, name, label, className, typeInput, placeholder,
+    description }: IFieldProps<T>) {
 
     const type = typeInput || "text";
     
@@ -70,7 +72,7 @@ function Field({ form, name, label, className, typeInput, placeholder,
     )
 }
 
-function FieldCheckbox({ className, form, name, label, description } : IFieldProps) {
+function FieldCheckbox<T extends FieldValues>({ className, form, name, label, description } : IFieldProps<T>) {
     return (
         <div className={className}>
             <FormField
@@ -118,7 +120,7 @@ function InputOTPSlotList({ length, index = 0 }: InputOTPSlotListProps) {
     )
 }
 
-function FieldCPF({ className, form, name, label, description}: IFieldProps) {
+function FieldCPF<T extends FieldValues>({ className, form, name, label, description}: IFieldProps<T>) {
     return (
         <div className={className}>
             <FormField
@@ -158,8 +160,8 @@ function FieldCPF({ className, form, name, label, description}: IFieldProps) {
     )
 }
 
-function FieldSelect({ className, form, name, label, placeholder, 
-    description, selectItems }: IFieldProps) {
+function FieldSelect<T extends FieldValues>({ className, form, name, label, placeholder, 
+    description, selectItems }: IFieldProps<T>) {
 
     return (
         <div className={className}>
@@ -193,8 +195,8 @@ function FieldSelect({ className, form, name, label, placeholder,
     )
 }
 
-function FieldTextArea({ form, name, label, placeholder, 
-    className, description }: IFieldProps) {
+function FieldTextArea<T extends FieldValues>({ form, name, label, placeholder, 
+    className, description }: IFieldProps<T>) {
 
     return (
         <div className={className}>
