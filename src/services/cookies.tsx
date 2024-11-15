@@ -47,7 +47,7 @@ const getCookies = async (name: string) => {
 }
 
 const setCookies = (name: string, value: string) => {
-    cookies().set(name, value)
+    cookies().set(name, value);
 }
 
 export { 
