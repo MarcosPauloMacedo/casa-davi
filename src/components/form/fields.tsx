@@ -44,7 +44,6 @@ interface IFieldProps<T extends FieldValues> {
     selectItems?: ISelectItem[]
 }
 
-
 function Field<T extends FieldValues>({ form, name, label, className, typeInput, placeholder,
     description }: IFieldProps<T>) {
 

@@ -46,7 +46,7 @@ const getCookies = async (name: string) => {
     return data ? data.value : null
 }
 
-const setCookies = (name: string, value: any) => {
+const setCookies = (name: string, value: string) => {
     cookies().set(name, value)
 }
 
