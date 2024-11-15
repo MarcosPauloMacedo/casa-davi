@@ -7,4 +7,4 @@ export interface IVacina {
     id: string;
 }
 
-export interface IVacinaCreate extends Omit<IVacina, 'id'> {}
+export type IVacinaCreate = Omit<IVacina, 'id'>;

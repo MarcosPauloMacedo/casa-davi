@@ -9,12 +9,8 @@ export interface IPaciente {
     status: keyof typeof Status;
 }
 
-export interface IPacienteTable extends Omit<IPaciente, 'status'> {
-    status: Status;
-}
+export type IPacienteTable = Omit<IPaciente, 'status'> & { status: Status };
 
-export interface IPacienteForm extends Omit<IPaciente, 'status'> {
-    status: boolean;
-}
+export type IPacienteForm = Omit<IPaciente, 'status'> & { status: boolean };
 
-export interface IPacienteCreate extends Omit<IPaciente, 'id'> {}
+export type IPacienteCreate = Omit<IPaciente, 'id'>;

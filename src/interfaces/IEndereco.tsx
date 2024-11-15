@@ -8,4 +8,4 @@ export interface IEndereco {
     pacienteId: string;
 }
 
-export interface IEnderecoCreate extends Omit<IEndereco, 'id'> {}
+export type IEnderecoCreate = Omit<IEndereco, 'id'>;

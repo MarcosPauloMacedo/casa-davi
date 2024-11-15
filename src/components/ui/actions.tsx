@@ -9,14 +9,14 @@ import { usePathname } from "next/navigation";
 
 import Link from "next/link";
 
-interface ActionsProps {
-    data: any;
-    onDelete: (data: any) => void;
+interface ActionsProps <TData> {
+    data: TData
+    onDelete: (data: TData) => void;
 }
 
-export function Actions({ data, onDelete }: ActionsProps ) {
+export function Actions<TData>({ data, onDelete }: ActionsProps<TData> ) {
     const pathName = usePathname();
-    const id = data.id;
+    const id = data["id"];
 
     return (
         <TableCell className="flex gap-6 justify-center">

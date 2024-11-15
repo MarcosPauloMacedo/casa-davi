@@ -8,4 +8,4 @@ export interface IExame {
     id: string;
 }
 
-export interface IExameCreate extends Omit<IExame, 'id'> {}
+export type IExameCreate = Omit<IExame, 'id'>;

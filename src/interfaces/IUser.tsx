@@ -9,14 +9,11 @@ export interface IUser {
     status: keyof typeof Status;
 }
 
-export interface IUserTable extends Omit<IUser, 'status'> {
-    status: Status;
-}
+export type IUserTable = Omit<IUser, 'status'> & { status: Status };
 
-export interface IUserForm extends Omit<IUser, 'status'> {
-    status: boolean;
-}
+export type IUserForm = Omit<IUser, 'status'> & { status: boolean };
 
-export interface IUserCreate extends Omit<IUser, 'id'> {}
+export type IUserCreate = Omit<IUser, 'id'>;
 
-export interface IUserPayload extends Omit<IUser, 'password'> {}
+export type IUserPayload = Omit<IUser, 'password'>;
+
