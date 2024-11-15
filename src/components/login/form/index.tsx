@@ -3,13 +3,11 @@
 import { Field } from "@/components/form/fields"
 import { Button } from "@/components/ui/button"
 import { Form } from "@/components/ui/form"
-import { ILogin } from "@/interfaces/ILogin"
 import { setToken } from "@/services/cookies"
 import { logIn } from "@/services/login"
 import { useRouter } from "next/navigation"
 import { Fragment } from "react"
-import { z } from "zod"
-import { formSchema, useFormValues } from "./form-control-data"
+import { useFormValues } from "./form-control-data"
 
 import styles from './form.module.css'
 
@@ -35,21 +33,12 @@ const SubtitleForm = () => {
     )
 }
 
-const createLogin = (values: z.infer<typeof formSchema>) => {
-    return {
-        username: values.username,
-        password: values.password
-    }
-}
-
 export function LoginForm() {
     const router = useRouter()
     const form = useFormValues()
 
-    const isSubmitSuccess = async (values: z.infer<typeof formSchema>) => {
-        const login: ILogin = createLogin(values)
-    
-        const response = await logIn(login)
+    const isSubmitSuccess = async () => {    
+        const response = await logIn();
 
         if(response.ok) {
             const user = await response.json()
@@ -60,8 +49,8 @@ export function LoginForm() {
         return false;
     }
 
-    const onSubmit = async (values: z.infer<typeof formSchema>) => {
-        const isSuccess = await isSubmitSuccess(values)
+    const onSubmit = async () => {
+        const isSuccess = await isSubmitSuccess()
 
         if(isSuccess) {
             router.push('/inicio')
