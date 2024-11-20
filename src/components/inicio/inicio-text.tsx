@@ -3,7 +3,7 @@ export const inicioText = {
     description: "Navegue pelas telas clicando nos botões abaixo",
     buttons: [
         { text: "Usuários", href: "/usuarios" },
-        { text: "Pacientes", href: "/pacientes" },
-        { text: "Consultas", href: "/consultas" },
+        { text: "Pacientes", href: "/pacientes" }
+        // { text: "Consultas", href: "/consultas" },
     ],
 };
